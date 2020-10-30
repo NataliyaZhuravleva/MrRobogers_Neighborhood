@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-  <title>   </title>
+  <title> </title>
   <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
   <script src="assets/js/jquery-3.5.1.js"></script>
   <script src="assets/js/scripts.js"></script>
 </head>
+
 <body>
   <div class="container">
     <h1>Mr. Roboger's Neighborhood</h1>
     <div>
-    <form id="form">
-    <div class="form-group">
-      <label for="input">Please enter a number here:</label>
-      <input class="form-control" id="input" type="number">
+      <form id="form">
+        <div class="form-group">
+          <label for="input">Please enter a number here:</label>
+          <input class="form-control" id="input" type="number">
+        </div>
+        <button type="submit" class="btn">Get Result</button><br>
+
+      </form>
     </div>
-    <button type="submit" class="btn">Get Result</button><br>
-    
-  </form>
-</div>
-  <span id="result">The result is:</span>
-  <span id="warning">Please enter a number greater or equal zero.</span>
+    <div id="result">
+      <div class="row">
+        <div class="col-md-12">
+          <p>The result is:</p>
+        </div>
+      </div>
+    </div>
+    <div id="warning">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Dear <span class="name"></span>, Please enter a number greater or equal zero.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>

@@ -39,11 +39,14 @@ function showArray(array) {
 $(document).ready(function () {
   $("#form").submit(function (event) {
     event.preventDefault();
+    
     const input = $("#input").val();
     if (input && input >= 0) {
+      $("#warning").hide();
       let res = showArray(beepBoop(input));
-      $("#result").show().append(" " + res);
+      $("#result").append(" " + res).show();
     } else {
+      $("#result").hide();
       $("#warning").show();
     }
 
