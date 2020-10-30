@@ -8,9 +8,9 @@ function beepBoop(number) {
     for (i = 0; i < result.length; i++) {
       if (result[i].includes("3")) {
         result[i] = "Won't you be my neighbor?";
-      } else if (result[i] === "2") {
+      } else if (result[i].includes("2")) {
         result[i] = "Boop!";
-      } else if (result[i]=== "1"){
+      } else if (result[i].includes("1")){
         result[i] = "Beep!";
       }
     

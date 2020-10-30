@@ -63,14 +63,20 @@ Describe: beepBoop():
 4. Test: "It changes array element containing single "3" to "Won't you be my neighbor?"<br>
     Expect: (beepBoop(3)).toEqual(["0","1","2","Won't you be my neighbor?"]);
 
-5. Test: "It changes array element containing single "2" to "Boop"<br>
+5. Test: "It changes array element containing single "2" to "Boop!"<br>
     Expect: (beepBoop(3)).toEqual(["0","1","Boop!","Won't you be my neighbor?"]);   
 
-6. Test: "It changes array element containing single "1" to "Beep"<br>
+6. Test: "It changes array element containing single "1" to "Beep!"<br>
     Expect: (beepBoop(3)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?"]);   
 
 7. Test: "It changes array element containing non-single "3" to "Won't you be my neighbor?"<br>
     Expect: (beepBoop(13)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?","4","5","6","7","8","9","10","11","12","Won't you be my neighbor?"]);   
+
+8. Test: "It changes array element containing non-single "2" to "Boop!"<br>
+    Expect: (beepBoop(13)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?","4","5","6","7","8","9","10","11","Boop!","Won't you be my neighbor?"]);   
+
+7. Test: "It changes array element containing non-single "1" to "Beep!"<br>
+    Expect: (beepBoop(13)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?","4","5","6","7","8","9","Beep!","Beep!","Boop!","Won't you be my neighbor?"]);   
 
 
 ### <span style="color:#0ec2b8">License</span>
