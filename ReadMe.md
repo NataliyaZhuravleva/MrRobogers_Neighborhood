@@ -47,7 +47,17 @@ _If you have any questions, ideas or concerns, please, contact me at [natalindri
 * _jQuery_
 * _Bootstrap_
 
-### License
+## <span style="color:#0ec2b8">Specs</span>
+
+### <span style="color:#0ec2b8">License</span>
+
+Describe: beepBoop()
+
+Test: "It returns false if user inputted negative number or nothing"
+Expect: (beepBoop()).toEqual(false);
+
+//Test: "It returns array with a range of numbers from 0 the user inputed number:"
+//Expect:
 
 *This software is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license*
 
