@@ -69,6 +69,9 @@ Describe: beepBoop():
 6. Test: "It changes array element containing single "1" to "Beep"<br>
     Expect: (beepBoop(3)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?"]);   
 
+7. Test: "It changes array element containing non-single "3" to "Won't you be my neighbor?"<br>
+    Expect: (beepBoop(13)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?","4","5","6","7","8","9","10","11","12","Won't you be my neighbor?"]);   
+
 
 ### <span style="color:#0ec2b8">License</span>
 

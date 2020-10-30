@@ -6,7 +6,7 @@ function beepBoop(number) {
       result[i] = String(i);
     };
     for (i = 0; i < result.length; i++) {
-      if (result[i] === "3") {
+      if (result[i].includes("3")) {
         result[i] = "Won't you be my neighbor?";
       } else if (result[i] === "2") {
         result[i] = "Boop!";
