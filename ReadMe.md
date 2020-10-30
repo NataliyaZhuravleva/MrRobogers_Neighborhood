@@ -1,24 +1,30 @@
-# <span style="color:#0ec2b8">_ _</span>
+# <span style="color:#0ec2b8">_Mr. Roboger's Neighborhood_</span>
 
-#### _  app, 10/30/2020_
+#### _Mr. Roboger's Neighborhood app, 10/30/2020_
 
 #### By _**Nataliya Zhuravleva**_
 
 ## <span style="color:#0ec2b8">Description</span>
 
-_ _
+_Create a web application that takes a number from a user and returns a range of numbers from 0 to the user inputted number with the following exceptions:_
+
+* _Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"_
+* _Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"_
+* _Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor?"_
+
+_These exceptions are written from least to most important._
+_A user can enter a new number and see new results over and over again._
 
 
 ## <span style="color:#0ec2b8">Setup/Installation Requirements</span>
 ### <span style="color:#c4f4ef">View Online</span>
-_Visit []() at _ to view application on GitHub pages._
+_Visit [Mr. Roboger's Neighborhood webpage](https://nataliyazhuravleva.github.io/MrRobogers_Neighborhood/) at https://nataliyazhuravleva.github.io/MrRobogers_Neighborhood/_ to view application on GitHub pages._
 
 ### <span style="color:#c4f4ef">Open Locally</span>
-1. _Navigate to my [ repo]() at _ to view the project files and commits.
+1. _Navigate to my [Mr. Roboger's Neighborhood repo](https://github.com/NataliyaZhuravleva/MrRobogers_Neighborhood) at https://github.com/NataliyaZhuravleva/MrRobogers_Neighborhood_ to view the project files and commits.
 2. _Click on the green button labeled "Code"_ to copy repository URL.
 3. _Clone the repository to your local machine_ by opening your machine terminal and using the command "git clone ".
 4. _Click on index.html file_ to view application.
-
 
 
 ## <span style="color:#0ec2b8">Known Bugs</span>
