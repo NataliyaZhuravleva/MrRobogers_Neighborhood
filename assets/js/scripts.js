@@ -7,13 +7,16 @@ function beepBoop(number) {
     };
     for (i = 0; i < result.length; i++) {
       if (result[i] === "3") {
-        result[i]="Won't you be my neighbor?";
+        result[i] = "Won't you be my neighbor?";
+      } else if (result[i] === "2") {
+        result[i] = "Boop!";
       }
-    }
-  } else {
-    return false
+    
   }
-  console.log(result);
+} else {
+  return false
+}
+console.log(result);
 }
 
 // User interface logic:
