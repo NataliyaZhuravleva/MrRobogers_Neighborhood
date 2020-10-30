@@ -80,8 +80,8 @@ Describe: beepBoop():
 
 Describe showArray();
 
-Test: "It transforms all array elements into string"<br>
-    Expect: (beepBoop(2)).toEqual(["0","1","2"]);
+1. Test: "It transforms array elements into a string with the array elements separated by comma and space. Period after last element."<br>
+    Expect: (showArray(beepBoop(2))).toEqual(The result is: "0", "1", "2".);
 
 
 ### <span style="color:#0ec2b8">License</span>

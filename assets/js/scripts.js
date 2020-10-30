@@ -1,4 +1,6 @@
 // Business logic:
+
+//function that returns array with a range of numbers from 0 to the user inputted number with required exceptions.
 function beepBoop(number) {
   result = [];
   if (number && number >= 0) {
@@ -20,29 +22,31 @@ function beepBoop(number) {
   return result;
 }
 
-function showArray(array){
-  let resultString="";
-  for (i=0;i<array.length-1;i++){
-    resultString=resultString.concat(" " + '"'+array[i]+'"'+',');
+//function that transforms array elements into a string with the array elements separated by comma and space. Period after last element.
+function showArray(array) {
+  let resultString = "";
+  for (i = 0; i < array.length - 1; i++) {
+    resultString = resultString.concat(" " + '"' + array[i] + '"' + ',');
   }
-  resultString=resultString.concat(" "+ '"'+array[array.length-1]+'"'+'.');
+  resultString = resultString.concat(" " + '"' + array[array.length - 1] + '"' + '.');
   return resultString;
-  
+
 }
-  
+
 
 // User interface logic:
 
 $(document).ready(function () {
-  $("button#getresult").click(function (event) {
-    const input = $("#input").val();
-    let res=showArray(beepBoop(input));
-    $("#result").show().append(" " + res);
-console.log(res);
+  $("#form").submit(function (event) {
     event.preventDefault();
+    const input = $("#input").val();
+    if (input && input >= 0) {
+      let res = showArray(beepBoop(input));
+      $("#result").show().append(" " + res);
+    } else {
+      $("#warning").show();
+    }
+
   });
 
-
-  //var x = makeArray();
-  //document.write(showArray(x));
 });
