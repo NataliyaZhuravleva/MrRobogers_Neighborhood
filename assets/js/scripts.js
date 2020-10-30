@@ -10,6 +10,8 @@ function beepBoop(number) {
         result[i] = "Won't you be my neighbor?";
       } else if (result[i] === "2") {
         result[i] = "Boop!";
+      } else if (result[i]=== "1"){
+        result[i] = "Beep!";
       }
     
   }

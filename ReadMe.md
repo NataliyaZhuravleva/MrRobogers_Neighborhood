@@ -60,11 +60,14 @@ Describe: beepBoop():
 3. Test: "It transforms all array elements into strings"<br>
     Expect: (beepBoop(2)).toEqual(["0","1","2"]);
 
-4. Test: "It changes array element containing 3 to "Won't you be my neighbor?"<br>
+4. Test: "It changes array element containing single "3" to "Won't you be my neighbor?"<br>
     Expect: (beepBoop(3)).toEqual(["0","1","2","Won't you be my neighbor?"]);
 
-5. Test: "It changes array element containing 2 to "Boop"<br>
-    Expect: (beepBoop(3)).toEqual(["0","1","Boop","Won't you be my neighbor?"]);   
+5. Test: "It changes array element containing single "2" to "Boop"<br>
+    Expect: (beepBoop(3)).toEqual(["0","1","Boop!","Won't you be my neighbor?"]);   
+
+6. Test: "It changes array element containing single "1" to "Beep"<br>
+    Expect: (beepBoop(3)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?"]);   
 
 
 ### <span style="color:#0ec2b8">License</span>
