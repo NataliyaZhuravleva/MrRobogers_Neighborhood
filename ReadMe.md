@@ -57,7 +57,7 @@ Test: "It returns false if user inputted negative number or nothing"
 Expect: (beepBoop()).toEqual(false);
 
 //Test: "It returns array with a range of numbers from 0 the user inputed number:"
-//Expect:
+//Expect: (beepBoop(5)).toEqual([0,1,2,3,4,5]);
 
 *This software is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license*
 
