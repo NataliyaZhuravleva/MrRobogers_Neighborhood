@@ -49,15 +49,25 @@ _If you have any questions, ideas or concerns, please, contact me at [natalindri
 
 ## <span style="color:#0ec2b8">Specs</span>
 
+Describe: beepBoop():
+
+1. Test: "It returns false if user inputted negative number or nothing"<br>
+    Expect: (beepBoop()).toEqual(false);
+
+2. Test: "It returns array with a range of numbers from 0 the user inputed number:"<br>
+    Expect: (beepBoop(5)).toEqual([0,1,2,3,4,5]);
+
+3. Test: "It transforms all array elements into strings"<br>
+    Expect: (beepBoop(2)).toEqual(["0","1","2"]);
+
+4. Test: "It changes array element containing 3 to "Won't you be my neighbor?"<br>
+    Expect: (beepBoop(3)).toEqual(["0","1","2","Won't you be my neighbor?"]);
+
+5. Test: "It changes array element containing 2 to "Boop"<br>
+    Expect: (beepBoop(3)).toEqual(["0","1","Boop","Won't you be my neighbor?"]);   
+
+
 ### <span style="color:#0ec2b8">License</span>
-
-Describe: beepBoop()
-
-Test: "It returns false if user inputted negative number or nothing"
-Expect: (beepBoop()).toEqual(false);
-
-//Test: "It returns array with a range of numbers from 0 the user inputed number:"
-//Expect: (beepBoop(5)).toEqual([0,1,2,3,4,5]);
 
 *This software is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license*
 
