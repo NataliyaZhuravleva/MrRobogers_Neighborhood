@@ -78,6 +78,11 @@ Describe: beepBoop():
 7. Test: "It changes array element containing non-single "1" to "Beep!"<br>
     Expect: (beepBoop(13)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?","4","5","6","7","8","9","Beep!","Beep!","Boop!","Won't you be my neighbor?"]);   
 
+Describe showArray();
+
+Test: "It transforms all array elements into string"<br>
+    Expect: (beepBoop(2)).toEqual(["0","1","2"]);
+
 
 ### <span style="color:#0ec2b8">License</span>
 

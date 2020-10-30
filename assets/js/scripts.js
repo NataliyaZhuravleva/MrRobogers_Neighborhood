@@ -10,27 +10,39 @@ function beepBoop(number) {
         result[i] = "Won't you be my neighbor?";
       } else if (result[i].includes("2")) {
         result[i] = "Boop!";
-      } else if (result[i].includes("1")){
+      } else if (result[i].includes("1")) {
         result[i] = "Beep!";
       }
-    
+    }
+  } else {
+    return false
   }
-} else {
-  return false
+  return result;
 }
-console.log(result);
+
+function showArray(array){
+  let resultString="";
+  for (i=0;i<array.length-1;i++){
+    resultString=resultString.concat(" " + '"'+array[i]+'"'+',');
+  }
+  resultString=resultString.concat(" "+ '"'+array[array.length-1]+'"'+'.');
+  return resultString;
+  
 }
+  
 
 // User interface logic:
 
 $(document).ready(function () {
   $("button#getresult").click(function (event) {
     const input = $("#input").val();
-    beepBoop(input);
-
+    let res=showArray(beepBoop(input));
+    $("#result").show().append(" " + res);
+console.log(res);
     event.preventDefault();
   });
 
 
-
+  //var x = makeArray();
+  //document.write(showArray(x));
 });
