@@ -6,11 +6,11 @@
 
 ## <span style="color:#0ec2b8">Description</span>
 
-_Create a web application that takes a number from a user and returns a range of numbers from 0 to the user inputted number with the following exceptions:_
+_Create a web application that takes a username and number from a user and returns a range of numbers from 0 to the user inputted number with the following exceptions:_
 
 * _Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"_
 * _Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"_
-* _Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor?"_
+* _Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor, [username]?"_
 
 _These exceptions are written from least to most important._
 _A user can enter a new number and see new results over and over again._
@@ -18,7 +18,7 @@ _A user can enter a new number and see new results over and over again._
 
 ## <span style="color:#0ec2b8">Setup/Installation Requirements</span>
 ### <span style="color:#c4f4ef">View Online</span>
-_Visit [Mr. Roboger's Neighborhood webpage](https://nataliyazhuravleva.github.io/MrRobogers_Neighborhood/) at https://nataliyazhuravleva.github.io/MrRobogers_Neighborhood/_ to view application on GitHub pages._
+_Visit [Mr. Roboger's Neighborhood webpage](https://nataliyazhuravleva.github.io/MrRobogers_Neighborhood/) at https://nataliyazhuravleva.github.io/MrRobogers_Neighborhood/ to view application on GitHub pages._
 
 ### <span style="color:#c4f4ef">Open Locally</span>
 1. _Navigate to my [Mr. Roboger's Neighborhood repo](https://github.com/NataliyaZhuravleva/MrRobogers_Neighborhood) at https://github.com/NataliyaZhuravleva/MrRobogers_Neighborhood_ to view the project files and commits.
@@ -77,6 +77,10 @@ Describe: beepBoop():
 
 7. Test: "It changes array element containing non-single "1" to "Beep!"<br>
     Expect: (beepBoop(13)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor?","4","5","6","7","8","9","Beep!","Beep!","Boop!","Won't you be my neighbor?"]);   
+
+8. Test: "It changes array element containing "3" to "Won't you be my neighbor, [username]?"
+Expect: (beepBoop(3)).toEqual(["0","Beep!","Boop!","Won't you be my neighbor, [username]?"]);   
+
 
 Describe showArray();
 

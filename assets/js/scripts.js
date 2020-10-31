@@ -40,15 +40,24 @@ $(document).ready(function () {
     event.preventDefault();
     const input = $("#input").val();
     const inputtedName = $("#name").val();
-
-    if (input && input >= 0) {
+//if all fields are filled, then invoking function
+    if (input && input >= 0 && inputtedName) {
       $("#warning").hide();
       res = showArray(beepBoop(input, inputtedName));
       $("#result-title").show();
       $("#result").text(res).show();
-    } else {
+    } 
+ //checking if the user didn't enter appropriate number or name, or both   
+    else if ((!input || input <0) && inputtedName) {
       $("#result").hide();
       $("#warning").show();
+    } else if (input && input >=0 && !inputtedName){
+      $("#warning").hide();
+      $("#result").hide();
+      $("#warning_name").show();
+    } else if (!inputtedName && (!input || input<0)){
+      $("#warning").show();
+      $("#warning_name").show();
     }
   });
 });
