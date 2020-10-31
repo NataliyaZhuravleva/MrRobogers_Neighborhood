@@ -33,15 +33,56 @@ function showArray(array) {
 }
 
 //Function that reverse array
-function reverseResult(arrayToReverse){
-  let reverseResult=[];
-  for (i=arrayToReverse.length-1; i>=0; i--){
-      reverseResult.push(arrayToReverse[i]);
+function reverseResult(arrayToReverse) {
+  let reverseResult = [];
+  for (i = arrayToReverse.length - 1; i >= 0; i--) {
+    reverseResult.push(arrayToReverse[i]);
   }
   return reverseResult;
 }
 
+function resultShow(result) {
+  $("#reverse_result_title").hide()
+  $("#reverse_result").hide();
+  $("#warning").hide();
+  $("#warning_name").hide();
+  $("#result_title").show();
+  $("#result").text(result).show();
+}
+function reverseResultShow(reverseResult){
+  $("#result_title").hide();
+  $("#result").hide();
+  $("#warning").hide();
+  $("#warning_name").hide();
+  $("#reverse_result_title").show();
+  $("#reverse_result").text(reverseResult).show();
+}
+function noNumber() {
+  $("#result_title").hide();
+  $("#result").hide();
+  $("#reverse_result_title").hide();
+  $("#reverse_result").hide();
+  $("#warning_name").hide();
+  $("#warning").show();
+}
 
+function noName() {
+  $("#result_title").hide();
+  $("#result").hide();
+  $("#reverse_result_title").hide();
+  $("#reverse_result").hide();
+  $("#warning").hide();
+  $("#warning_name").show();
+}
+
+function noNumberNoName() {
+  $("#result_title").hide();
+  $("#result").hide();
+  $("#reverse_result_title").hide();
+  $("#reverse_result").hide();
+  $("#warning").show();
+  $("#warning_name").show();
+}
 
 // User interface logic:
 
@@ -50,49 +91,33 @@ $(document).ready(function () {
     event.preventDefault();
     const input = $("#input").val();
     let inputtedName = $("#name").val();
-//if all fields are filled, then invoking function
+
+    //if all fields are filled, then invoking function
     if (input && input >= 0 && inputtedName) {
-      $("#reverse_result").hide();
-      $("#reverse_result_title").hide()
-      $("#warning").hide();
-      $("#warning_name").hide();
       res = showArray(beepBoop(input, inputtedName));
-      $("#result_title").show();
-      $("#result").text(res).show();
-    } 
- //checking if the user didn't enter appropriate number or name, or both   
-    else if ((!input || input <0) && inputtedName) {
-      $("#result_title").hide();
-      $("#result").hide();
-      $("#reverse_result_title").hide();
-      $("#reverse_result").hide();
-      $("#warning_name").hide();
-      $("#warning").show();
-    } else if (input && input >=0 && !inputtedName){    
-      $("#result_title").hide();
-      $("#result").hide();
-      $("#reverse_result_title").hide();
-      $("#reverse_result").hide();
-      $("#warning").hide();
-      $("#warning_name").show();
-    } else if (!inputtedName && (!input || input<0)){
-      $("#result_title").hide();
-      $("#result").hide();
-      $("#reverse_result_title").hide();
-      $("#reverse_result").hide();
-      $("#warning").show();
-      $("#warning_name").show();
+      resultShow(res);
     }
-     $("button#reverse_result_btn").click(function(event) {
-      $("#result_title").hide();
-      $("#result").hide();
-      $("#warning").hide();
-      $("#warning_name").hide();
-       revRes=showArray(reverseResult(beepBoop(input,inputtedName)));
-       console.log(revRes);
-       $("#reverse_result_title").show();
-       $("#reverse_result").text(revRes).show();
-     });  
+    //checking if the user didn't enter appropriate number or name, or both   
+    else if ((!input || input < 0) && inputtedName) {
+      noNumber();
+    } else if (input && input >= 0 && !inputtedName) {
+      noName();
+    } else if (!inputtedName && (!input || input < 0)) {
+      noNumberNoName();
+    }
+    //Reverse result button click
+    $("button#reverse_result_btn").click(function (event) {
+      if (input && input >= 0 && inputtedName) {
+        revRes = showArray(reverseResult(beepBoop(input, inputtedName)));
+        reverseResultShow(revRes);
+      } else if ((!input || input < 0) && inputtedName) {
+        noNumber();
+      } else if (input && input >= 0 && !inputtedName) {
+        noName();
+      } else if (!inputtedName && (!input || input < 0)) {
+        noNumberNoName();
+      }
+    });
   });
-  
+
 });
