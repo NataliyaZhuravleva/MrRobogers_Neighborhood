@@ -12,8 +12,9 @@ _Create a web application that takes a username and number from a user and retur
 * _Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"_
 * _Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor, [username]?"_
 
-_These exceptions are written from least to most important._
-_A user can enter a new number and see new results over and over again._
+_These exceptions are written from least to most important._<br>
+_A user can enter a new number and see new results over and over again._<br>
+_Button "Reverse Result" shows the output in reversed order._
 
 
 ## <span style="color:#0ec2b8">Setup/Installation Requirements</span>
