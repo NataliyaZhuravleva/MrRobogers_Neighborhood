@@ -32,6 +32,16 @@ function showArray(array) {
   return resultString;
 }
 
+//Function that reverse array
+function reverseResult(arrayToReverse){
+  let reverseResult=[];
+  for (i=arrayToReverse.length-1; i>=0; i--){
+      reverseResult.push(arrayToReverse[i]);
+  }
+  return reverseResult;
+}
+
+
 
 // User interface logic:
 
@@ -39,25 +49,50 @@ $(document).ready(function () {
   $("#form").submit(function (event) {
     event.preventDefault();
     const input = $("#input").val();
-    const inputtedName = $("#name").val();
+    let inputtedName = $("#name").val();
 //if all fields are filled, then invoking function
     if (input && input >= 0 && inputtedName) {
+      $("#reverse_result").hide();
+      $("#reverse_result_title").hide()
       $("#warning").hide();
+      $("#warning_name").hide();
       res = showArray(beepBoop(input, inputtedName));
-      $("#result-title").show();
+      $("#result_title").show();
       $("#result").text(res).show();
     } 
  //checking if the user didn't enter appropriate number or name, or both   
     else if ((!input || input <0) && inputtedName) {
+      $("#result_title").hide();
       $("#result").hide();
+      $("#reverse_result_title").hide();
+      $("#reverse_result").hide();
+      $("#warning_name").hide();
       $("#warning").show();
-    } else if (input && input >=0 && !inputtedName){
-      $("#warning").hide();
+    } else if (input && input >=0 && !inputtedName){    
+      $("#result_title").hide();
       $("#result").hide();
+      $("#reverse_result_title").hide();
+      $("#reverse_result").hide();
+      $("#warning").hide();
       $("#warning_name").show();
     } else if (!inputtedName && (!input || input<0)){
+      $("#result_title").hide();
+      $("#result").hide();
+      $("#reverse_result_title").hide();
+      $("#reverse_result").hide();
       $("#warning").show();
       $("#warning_name").show();
     }
+     $("button#reverse_result_btn").click(function(event) {
+      $("#result_title").hide();
+      $("#result").hide();
+      $("#warning").hide();
+      $("#warning_name").hide();
+       revRes=showArray(reverseResult(beepBoop(input,inputtedName)));
+       console.log(revRes);
+       $("#reverse_result_title").show();
+       $("#reverse_result").text(revRes).show();
+     });  
   });
+  
 });

@@ -22,17 +22,28 @@
         <label for="name">Please enter your name:</label>
         <input class="form-control" id="name">
       </div>
-
-      <button type="submit" class="btn">Get Result</button><br>
-      
       <div class="row">
         <div class="col-md-12">
-          <span id="result-title">The result is:</span>
+          <button type="submit" class="btn">Get Result</button><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn" id="reverse_result_btn">Reverse Result</button><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <span id="result_title">The result is:</span>
           <span id="result"></span>
+          <span id="reverse_result_title">The reverse result is:</span>
+          <span id="reverse_result"></span>
           <span id="warning">Please, enter the number greater or equal 0.</span>
           <div id="warning_name">Please, enter your name.</div>
         </div>
       </div>
+
 
     </form>
   </div>
