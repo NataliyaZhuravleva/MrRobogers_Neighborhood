@@ -41,6 +41,9 @@ function reverseResult(arrayToReverse) {
   return reverseResult;
 }
 
+
+// User interface logic:
+//UI functions---------------------------------------
 function resultShow(result) {
   $("#reverse_result_title").hide()
   $("#reverse_result").hide();
@@ -84,8 +87,7 @@ function noNumberNoName() {
   $("#warning_name").show();
 }
 
-// User interface logic:
-
+//UI Main Code section-------------------------------------------
 $(document).ready(function () {
   $("#form").submit(function (event) {
     event.preventDefault();
