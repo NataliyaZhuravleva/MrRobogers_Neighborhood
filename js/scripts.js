@@ -3,10 +3,12 @@
 //Function that returns array with a range of numbers from 0 to the user inputted number with required exceptions.
 function beepBoop(number, name) {
   result = [];
+
   //Add array with a range of numbers from 0 the user inputed number and transform array elements into strings
   for (let i = 0; i <= number; i++) {
     result[i] = String(i);
   };
+
   //Exception's handling
   for (i = 0; i < result.length; i++) {
     if (result[i].includes("3")) {
@@ -41,93 +43,52 @@ function reverseResult(arrayToReverse) {
   return reverseResult;
 }
 
-
 // User interface logic:
-//UI functions---------------------------------------
-function resultShow(result) {
-  $("#reverse_result_title").hide()
-  $("#reverse_result").hide();
-  $("#warning").hide();
-  $("#warning_name").hide();
-  $("#result_title").show();
-  $("#result").text(result).show();
-}
-function reverseResultShow(reverseResult) {
-  $("#result_title").hide();
-  $("#result").hide();
-  $("#warning").hide();
-  $("#warning_name").hide();
-  $("#reverse_result_title").show();
-  $("#reverse_result").text(reverseResult).show();
-}
-function noNumber() {
-  $("#result_title").hide();
-  $("#result").hide();
-  $("#reverse_result_title").hide();
-  $("#reverse_result").hide();
-  $("#warning_name").hide();
-  $("#warning").show();
-}
-
-function noName() {
-  $("#result_title").hide();
-  $("#result").hide();
-  $("#reverse_result_title").hide();
-  $("#reverse_result").hide();
-  $("#warning").hide();
-  $("#warning_name").show();
-}
-
-function noNumberNoName() {
-  $("#result_title").hide();
-  $("#result").hide();
-  $("#reverse_result_title").hide();
-  $("#reverse_result").hide();
-  $("#warning").show();
-  $("#warning_name").show();
-}
-
-//UI Main Code section-------------------------------------------
 $(document).ready(function () {
   $("#form").submit(function (event) {
     event.preventDefault();
+
     const input = $("#input").val();
     let inputtedName = $("#name").val();
-    let res="";
+    let res = "";
+
+    $("#result_title").hide();
+    $("#result").hide();
+    $("#reverse_result_title").hide();
+    $("#reverse_result").hide();
+    $("#warning").hide();
+    $("#warning_name").hide();
 
     //if all fields are filled, then invoking function
     if (input && input >= 0 && inputtedName) {
       res = showArray(beepBoop(input, inputtedName));
-      resultShow(res);
+      $("#result_title").show();
+      $("#result").text(res).show();
     }
+
     //checking if the user didn't enter appropriate number or name, or both   
     else if ((!input || input < 0) && inputtedName) {
-      noNumber();
+      $("#warning").show();
     } else if (input && input >= 0 && !inputtedName) {
-      noName();
+      $("#warning_name").show();
     } else if (!inputtedName && (!input || input < 0)) {
-      noNumberNoName();
+      $("#warning, #warning_name").show();
     }
+
     //Reverse result button click
     $("button#reverse_result_btn").click(function (event) {
       if (input && input >= 0 && inputtedName && res) {
         revRes = showArray(reverseResult(beepBoop(input, inputtedName)));
-        reverseResultShow(revRes);
-      } else if ((!input || input < 0) && inputtedName) {
-        noNumber();
+        $("#reverse_result_title").show();
+        $("#reverse_result").text(revRes).show();
+      } 
+      //checking if the user didn't enter appropriate number or name, or both
+      else if ((!input || input < 0) && inputtedName) {
+        $("#warning").show();
       } else if (input && input >= 0 && !inputtedName) {
-        noName();
+        $("#warning_name").show();
       } else if (!inputtedName && (!input || input < 0)) {
-        noNumberNoName();
-      } else if (!res) {
-        $("#result_title").hide();
-        $("#result").hide();
-        $("#reverse_result_title").hide();
-        $("#reverse_result").hide();
-        $("#warning").hide();
-        $("#warning_name").hide();
-        $("#warning_get_result").show();  
-        console.log(res);
+        $("#warning, #warning_name").show();
       }
     });
   });
