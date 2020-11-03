@@ -1,4 +1,4 @@
-#result,  #result_title, #warning, #warning_name, #reverse_result_title, #reverse_result {
+#result_title, #result,  #reverse_result_title, #reverse_resul, #warning, #warning_name, #warning_get_result {
   display:none;
 }
 h1{

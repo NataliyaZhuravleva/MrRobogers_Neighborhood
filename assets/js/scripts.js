@@ -49,7 +49,7 @@ function resultShow(result) {
   $("#result_title").show();
   $("#result").text(result).show();
 }
-function reverseResultShow(reverseResult){
+function reverseResultShow(reverseResult) {
   $("#result_title").hide();
   $("#result").hide();
   $("#warning").hide();
@@ -91,6 +91,7 @@ $(document).ready(function () {
     event.preventDefault();
     const input = $("#input").val();
     let inputtedName = $("#name").val();
+    let res="";
 
     //if all fields are filled, then invoking function
     if (input && input >= 0 && inputtedName) {
@@ -107,7 +108,7 @@ $(document).ready(function () {
     }
     //Reverse result button click
     $("button#reverse_result_btn").click(function (event) {
-      if (input && input >= 0 && inputtedName) {
+      if (input && input >= 0 && inputtedName && res) {
         revRes = showArray(reverseResult(beepBoop(input, inputtedName)));
         reverseResultShow(revRes);
       } else if ((!input || input < 0) && inputtedName) {
@@ -116,6 +117,15 @@ $(document).ready(function () {
         noName();
       } else if (!inputtedName && (!input || input < 0)) {
         noNumberNoName();
+      } else if (!res) {
+        $("#result_title").hide();
+        $("#result").hide();
+        $("#reverse_result_title").hide();
+        $("#reverse_result").hide();
+        $("#warning").hide();
+        $("#warning_name").hide();
+        $("#warning_get_result").show();  
+        console.log(res);
       }
     });
   });
